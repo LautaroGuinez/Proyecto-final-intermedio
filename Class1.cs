@@ -104,40 +104,30 @@ namespace Proyecto_final_intermedio
             _idUsuario = idUsuario;
         }
     }
-    public class Consultor
+    public class ConsultorUsuario
     {
-        public static List<Usuario> TraerUsuario(int idusuario)
+        public static Usuario TraerUsuario(string nombreUsuario )
         {
             string connectionString = "Server=<DESKTOP-N741CHP> ; Database =<SistemaGestion>; Trusted_Connection = True;";
-            var usuario = new List<Usuario>(); 
+            var usuario = new Usuario(); 
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
 
-                var comando = new SqlCommand("Select Nombre ,Apellido,NombreUsuario, Mail From Usuario Where Id = @idUse", connection);
+                var comando = new SqlCommand("Select * From Usuario Where NombreUsuario = @idUse", connection);
 
                 var parametro = new SqlParameter();
 
                 parametro.ParameterName = "idUse";
                 parametro.SqlDbType = SqlDbType.BigInt;
-                parametro.Value = idusuario;
+                parametro.Value = nombreUsuario;
 
                 comando.Parameters.Add(parametro);
                 connection.Open();
                 using (SqlDataReader dr = comando.ExecuteReader())
                 {
-                    if (dr.HasRows)
-                        while (dr.Read())
-                        {
-
-                            var user = new Usuario();
-                            user._nombre = dr["Nombre"].ToString();
-                            user._apellido = dr["Apellido"].ToString();
-                            user._nombreDeUsuario = dr["NombreUsuario"].ToString();
-                            user._mail = dr["Mail"].ToString();
-
-                            usuario.Add(user); 
-                        }
+                   
+                        
 
                 }
 
@@ -152,4 +142,115 @@ namespace Proyecto_final_intermedio
 
     }
   
+    public class ConsultarProductos
+    {
+        public static List<Producto> TraerProdcutos(int idPrudocuto)
+        {
+
+            string connectionString = "Server=<DESKTOP-N741CHP> ; Database =<SistemaGestion>; Trusted_Connection = True;";
+            var listaProducto = new List<Producto>();
+            
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+
+                var comando = new SqlCommand("Select * From Producto Where IdUsuario = @idUse", connection);
+
+                var parametro = new SqlParameter();
+
+                parametro.ParameterName = "idUse";
+                parametro.SqlDbType = SqlDbType.BigInt;
+                parametro.Value = idPrudocuto;
+
+                comando.Parameters.Add(parametro);
+                connection.Open();
+                using (SqlDataReader dr = comando.ExecuteReader())
+                {
+                    if (dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            var producto = new Producto(); 
+                            producto._id = Convert.ToInt32(dr["Id"]);
+                            producto._descripcion = dr["Descripciones"].ToString();
+                            producto._costo = Convert.ToInt32(dr["Costo"]);
+                            producto._precioVenta = Convert.ToInt32(dr["PrecioVenta"]);
+                            producto._stocl = Convert.ToInt32(dr["Stock"]);
+                            producto._idUsuario = Convert.ToInt32(dr["IdUsuario"]);
+
+                            listaProducto.Add(producto);
+                        }
+
+
+                    }
+
+
+                }
+
+
+
+            }
+
+            return listaProducto; 
+
+
+        }
+        
+
+
+
+
+    }
+    
+    public class ConsultarProductoVendido
+    {
+        public static List<Producto> TraerProductosVendidos(int idusuario)
+        {
+            string connectionString = "Server=<DESKTOP-N741CHP> ; Database =<SistemaGestion>; Trusted_Connection = True;";
+            var listaProductos = new List<Producto>();
+
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+
+
+                var comando = new SqlCommand("select P.Descripciones ,P.PrecioVenta , p.Stock from  Usuario as U Inner join  Producto as P on U.Id = P.IdUsuario inner join ProductoVendido as PV on P.Id = PV.IdProducto inner join Venta as V on V.Id  = PV.IdVenta where u.id = 1  ", connection);
+
+                var parametro = new SqlParameter();
+
+                parametro.ParameterName = "idUse";
+                parametro.SqlDbType = SqlDbType.BigInt;
+                parametro.Value = idusuario;
+
+                comando.Parameters.Add(parametro);
+                connection.Open();
+                using (SqlDataReader dr = comando.ExecuteReader())
+                {
+                    if (dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            var producto = new Producto() ;
+
+                            producto._descripcion = dr["Descripciones"].ToString();
+                            producto._precioVenta = Convert.ToInt32(dr["PrecioVenta"]);
+                            producto._stocl = Convert.ToInt32(dr["Stock"]);
+
+                            listaProductos.Add(producto);
+                        }
+            
+                    }
+
+                }
+
+            }
+
+            return listaProductos; 
+
+        }
+
+
+
+    }
+
 }
