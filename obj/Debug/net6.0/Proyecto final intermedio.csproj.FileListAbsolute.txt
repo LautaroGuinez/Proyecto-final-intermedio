@@ -1,0 +1,15 @@
+C:\Users\Lanex\Desktop\C#\Proyecto final intermedio\obj\Debug\net6.0\Proyecto final intermedio.csproj.AssemblyReference.cache
+C:\Users\Lanex\Desktop\C#\Proyecto final intermedio\obj\Debug\net6.0\Proyecto final intermedio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lanex\Desktop\C#\Proyecto final intermedio\obj\Debug\net6.0\Proyecto final intermedio.AssemblyInfoInputs.cache
+C:\Users\Lanex\Desktop\C#\Proyecto final intermedio\obj\Debug\net6.0\Proyecto final intermedio.AssemblyInfo.cs
+C:\Users\Lanex\Desktop\C#\Proyecto final intermedio\obj\Debug\net6.0\Proyecto final intermedio.csproj.CoreCompileInputs.cache
+C:\Users\Lanex\Desktop\C#\Proyecto final intermedio\bin\Debug\net6.0\Proyecto final intermedio.exe
+C:\Users\Lanex\Desktop\C#\Proyecto final intermedio\bin\Debug\net6.0\Proyecto final intermedio.deps.json
+C:\Users\Lanex\Desktop\C#\Proyecto final intermedio\bin\Debug\net6.0\Proyecto final intermedio.runtimeconfig.json
+C:\Users\Lanex\Desktop\C#\Proyecto final intermedio\bin\Debug\net6.0\Proyecto final intermedio.dll
+C:\Users\Lanex\Desktop\C#\Proyecto final intermedio\bin\Debug\net6.0\Proyecto final intermedio.pdb
+C:\Users\Lanex\Desktop\C#\Proyecto final intermedio\obj\Debug\net6.0\Proyecto final intermedio.dll
+C:\Users\Lanex\Desktop\C#\Proyecto final intermedio\obj\Debug\net6.0\refint\Proyecto final intermedio.dll
+C:\Users\Lanex\Desktop\C#\Proyecto final intermedio\obj\Debug\net6.0\Proyecto final intermedio.pdb
+C:\Users\Lanex\Desktop\C#\Proyecto final intermedio\obj\Debug\net6.0\Proyecto final intermedio.genruntimeconfig.cache
+C:\Users\Lanex\Desktop\C#\Proyecto final intermedio\obj\Debug\net6.0\ref\Proyecto final intermedio.dll
